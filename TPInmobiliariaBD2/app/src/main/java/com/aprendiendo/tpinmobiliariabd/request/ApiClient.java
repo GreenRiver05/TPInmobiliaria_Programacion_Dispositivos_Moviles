@@ -3,9 +3,12 @@ package com.aprendiendo.tpinmobiliariabd.request;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.aprendiendo.tpinmobiliariabd.modelos.Inmueble;
 import com.aprendiendo.tpinmobiliariabd.modelos.Propietario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -42,6 +45,9 @@ public class ApiClient {
 
         @PUT("api/Propietarios/actualizar")
         Call<Propietario> actualizarPropietario(@Header("Authorization") String token, @Body Propietario propietario);
+
+        @GET("api/inmuebles")
+        Call<List<Inmueble>> getInmuebles(@Header("Authorization") String token);
 
 
     }

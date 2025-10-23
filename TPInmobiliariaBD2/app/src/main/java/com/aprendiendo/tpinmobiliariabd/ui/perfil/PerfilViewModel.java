@@ -73,6 +73,17 @@ public class PerfilViewModel extends AndroidViewModel {
             mEstado.setValue(false);
             mNombre.setValue("Editar");
 
+            if(nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty() || telefono.isEmpty() || email.isEmpty()){
+                Toast.makeText(getApplication(), "Debe completar todos los campos", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+            if(!email.contains("@")){
+                Toast.makeText(getApplication(), "El email no es válido", Toast.LENGTH_LONG).show();
+                return;
+            }
+
+
 
             Propietario propietario = new Propietario();
             propietario.setIdPropietario(mPropietario.getValue().getIdPropietario());
