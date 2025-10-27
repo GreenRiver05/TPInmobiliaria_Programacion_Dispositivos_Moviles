@@ -1,13 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.inmuebles.DetalleInmuebleFragment">
+    android:background="@color/fondo_detalle"
+    android:padding="20dp">
 
-    <TextView
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imgDetalle"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:elevation="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tvCodigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Codigo:    "
+                android:textAlignment="textEnd"
+                android:textColor="#666565"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgDetalle" />
+
+            <TextView
+                android:id="@+id/tvDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Dirección"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvUso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Uso"
+                android:textColor="#666565"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvTipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tipo"
+                android:textColor="#666565"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvAmbientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ambientes"
+                android:textColor="#666565"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvSuperficie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Superficie"
+                android:textColor="#666565"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvValor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Valor"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDisponible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Disponible"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/btnCambiarEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Habilitar Inmueble"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

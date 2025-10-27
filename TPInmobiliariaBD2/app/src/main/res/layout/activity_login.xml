@@ -107,7 +107,8 @@
                 android:layout_marginTop="16dp"
                 android:text="Credenciales inválidas"
                 android:textColor="@android:color/holo_red_dark"
-                android:visibility="gone" />
+                android:visibility="invisible"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

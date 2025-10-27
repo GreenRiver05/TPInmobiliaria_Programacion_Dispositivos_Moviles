@@ -49,11 +49,11 @@
                 android:id="@+id/etNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/edditext_fondo_bloqueado"
                 android:enabled="false"
                 android:hint="Nombre"
                 android:padding="12dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
@@ -69,11 +69,11 @@
                 android:id="@+id/etApellido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/edditext_fondo_bloqueado"
                 android:enabled="false"
                 android:hint="Apellido"
                 android:padding="12dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
@@ -89,12 +89,12 @@
                 android:id="@+id/etDni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/edditext_fondo_bloqueado"
                 android:enabled="false"
                 android:hint="DNI"
                 android:inputType="number"
                 android:padding="12dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
@@ -110,12 +110,12 @@
                 android:id="@+id/etTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/edditext_fondo_bloqueado"
                 android:enabled="false"
                 android:hint="Teléfono"
                 android:inputType="number"
                 android:padding="12dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray" />
 
             <TextView
@@ -131,12 +131,12 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/edditext_fondo_bloqueado"
                 android:enabled="false"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="12dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray" />
 
 

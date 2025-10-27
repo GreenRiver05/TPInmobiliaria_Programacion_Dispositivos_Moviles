@@ -21,20 +21,45 @@
         android:id="@+id/nav_inmuebles"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.inmuebles.InmueblesFragment"
         android:label="@string/menu_inmuebles"
-        tools:layout="@layout/fragment_inmuebles" />
+        tools:layout="@layout/fragment_inmuebles" >
+        <action
+            android:id="@+id/action_nav_inmuebles_to_detalleInmuebleFragment"
+            app:destination="@id/detalleInmuebleFragment" />
+        <action
+            android:id="@+id/action_nav_inmuebles_to_crearInmuebleFragment"
+            app:destination="@id/crearInmuebleFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/logoutFragment"
+        android:id="@+id/nav_logout"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.logout.LogoutFragment"
-        android:label="fragment_logout"
+        android:label="@string/menu_logout"
         tools:layout="@layout/fragment_logout" />
     <fragment
-        android:id="@+id/contratosFragment"
+        android:id="@+id/nav_contratos"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.contratos.ContratosFragment"
-        android:label="fragment_contratos"
+        android:label="@string/menu_contratos"
         tools:layout="@layout/fragment_contratos" />
     <fragment
-        android:id="@+id/inquilinosFragment"
+        android:id="@+id/nav_inquilinos"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.inquilinos.InquilinosFragment"
-        android:label="fragment_inquilinos"
+        android:label="@string/menu_inquilinos"
         tools:layout="@layout/fragment_inquilinos" />
+    <fragment
+        android:id="@+id/detalleInmuebleFragment"
+        android:name="com.aprendiendo.tpinmobiliariabd.ui.inmuebles.DetalleInmuebleFragment"
+        android:label="Detalles Inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble" >
+        <action
+            android:id="@+id/action_detalleInmuebleFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearInmuebleFragment"
+        android:name="com.aprendiendo.tpinmobiliariabd.ui.inmuebles.CrearInmuebleFragment"
+        android:label="Crear Inmueble"
+        tools:layout="@layout/fragment_crear_inmueble" >
+        <action
+            android:id="@+id/action_crearInmuebleFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+    </fragment>
 </navigation>

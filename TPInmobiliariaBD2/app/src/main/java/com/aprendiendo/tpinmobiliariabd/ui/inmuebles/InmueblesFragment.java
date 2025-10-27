@@ -1,5 +1,6 @@
 package com.aprendiendo.tpinmobiliariabd.ui.inmuebles;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.aprendiendo.tpinmobiliariabd.R;
 import com.aprendiendo.tpinmobiliariabd.databinding.FragmentInmueblesBinding;
 import com.aprendiendo.tpinmobiliariabd.modelos.Inmueble;
 
@@ -40,6 +43,14 @@ public class InmueblesFragment extends Fragment {
                 binding.listaInmuebles.setAdapter(adapter);
             }
         });
+
+        binding.btnNuevoInmueble.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.crearInmuebleFragment);
+            }
+        });
+
         mv.obtenerListaInmuebles();
         return root;
     }

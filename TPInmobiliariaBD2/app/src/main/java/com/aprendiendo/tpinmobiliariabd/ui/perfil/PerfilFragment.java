@@ -1,15 +1,18 @@
 package com.aprendiendo.tpinmobiliariabd.ui.perfil;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.aprendiendo.tpinmobiliariabd.R;
 import com.aprendiendo.tpinmobiliariabd.databinding.FragmentPerfilBinding;
 import com.aprendiendo.tpinmobiliariabd.modelos.Propietario;
 
@@ -37,14 +40,36 @@ public class PerfilFragment extends Fragment {
                 binding.etTelefono.setEnabled(aBoolean);
             }
         });
-
+        mv.getFondoEditText().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer fondo) {
+                binding.etTelefono.setBackgroundResource(fondo);
+                binding.etNombre.setBackgroundResource(fondo);
+                binding.etApellido.setBackgroundResource(fondo);
+                binding.etDni.setBackgroundResource(fondo);
+            }
+        });
+        mv.getColorTexto().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer color) {
+                binding.etNombre.setTextColor(ContextCompat.getColor(requireContext(), color));
+                binding.etApellido.setTextColor(ContextCompat.getColor(requireContext(), color));
+                binding.etDni.setTextColor(ContextCompat.getColor(requireContext(), color));
+                binding.etTelefono.setTextColor(ContextCompat.getColor(requireContext(), color));
+            }
+        });
+        mv.getColorBoton().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer color) {
+                binding.btEditarGuardar.setBackgroundTintList(ContextCompat.getColorStateList(requireContext(), color));
+            }
+        });
         mv.getmNombre().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 binding.btEditarGuardar.setText(s);
             }
         });
-
         mv.getmPropietario().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
@@ -53,6 +78,7 @@ public class PerfilFragment extends Fragment {
                 binding.etDni.setText(propietario.getDni());
                 binding.etTelefono.setText(propietario.getTelefono());
                 binding.etEmail.setText(propietario.getEmail());
+
             }
         });
 
@@ -75,6 +101,7 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mv.reiniciarPerfil();
         binding = null;
     }
 }

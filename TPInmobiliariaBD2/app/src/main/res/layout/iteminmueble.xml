@@ -34,6 +34,7 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@id/imgPortada"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -47,6 +48,7 @@
             android:textColor="@android:color/holo_green_dark"
             android:textSize="16sp"
             android:textStyle="italic"
+            android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@id/tvDireccion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

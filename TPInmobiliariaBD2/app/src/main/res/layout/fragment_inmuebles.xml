@@ -21,4 +21,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/iteminmueble" />
 
+    <ImageButton
+        android:id="@+id/btnNuevoInmueble"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_boton_circular"
+        android:src="@drawable/ic_new_home"
+        android:contentDescription="Agregar nuevo inmueble"
+        android:scaleType="centerInside"
+        android:elevation="10dp"
+        android:tint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

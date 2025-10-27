@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainCrearInmueble"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_detalle"
+    android:padding="24dp"
+    tools:context=".ui.inmuebles.CrearInmuebleFragment">
+
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Nuevo Inmueble"
+        android:textColor="@android:color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollCrearInmueble"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCrearInmueble"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="#EBFFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección"
+                    android:textColor="#424242"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Calle Falsa 123"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="Uso"
+                    android:textColor="#424242"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etUso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Comercial / Residencial"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="Tipo"
+                    android:textColor="#424242"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Casa / Departamento"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ambientes"
+                            android:textAlignment="center"
+                            android:textColor="#424242"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etAmbientes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_background"
+                            android:hint="Ej: 3"
+                            android:inputType="number"
+                            android:padding="12dp"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Superficie m2"
+                            android:textAlignment="center"
+                            android:textColor="#424242"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etSuperficie"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_background"
+                            android:hint="Ej: 120"
+                            android:inputType="number"
+                            android:padding="12dp"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/darker_gray" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="Ubicación (Latitud / Longitud)"
+                    android:textColor="#424242"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <EditText
+                        android:id="@+id/etLatitud"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_background"
+                        android:hint="Latitud"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/etLongitud"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_background"
+                        android:hint="Longitud"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="Valor ($)"
+                    android:textColor="#424242"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etValor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Ej: 120000"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray" />
+
+
+                <Button
+                    android:id="@+id/btnSeleccionarImagen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/teal_700"
+                    android:text="Seleccionar Imagen"
+                    android:textColor="@android:color/white" />
+
+
+                <ImageView
+                    android:id="@+id/imgPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edittext_background"
+                    android:contentDescription="Vista previa de la imagen seleccionada"
+                    android:scaleType="centerCrop" />
+
+                <Button
+                    android:id="@+id/btnGuardarInmueble"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/verde_boton"
+                    android:text="Guardar Inmueble"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
