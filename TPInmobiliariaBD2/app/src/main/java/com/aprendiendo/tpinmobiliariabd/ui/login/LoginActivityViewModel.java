@@ -2,6 +2,8 @@ package com.aprendiendo.tpinmobiliariabd.ui.login;
 
 import android.app.Application;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,8 @@ import androidx.lifecycle.MutableLiveData;
 import com.aprendiendo.tpinmobiliariabd.MainActivity;
 import com.aprendiendo.tpinmobiliariabd.request.ApiClient;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -18,11 +22,10 @@ import retrofit2.Response;
 public class LoginActivityViewModel extends AndroidViewModel {
 
     private MutableLiveData<String> mMensaje = new MutableLiveData<>();
+private SensorManager manager;
+private List<Sensor> sensores;
 
-
-    public LoginActivityViewModel(@NonNull Application application) {
-        super(application);
-    }
+    public LoginActivityViewModel(@NonNull Application application) { super(application); }
 
 
     public MutableLiveData<String> getmMensaje() {return mMensaje;}
@@ -37,7 +40,6 @@ public class LoginActivityViewModel extends AndroidViewModel {
 
         ApiClient.InmoServices inmoServices = ApiClient.getInmoServices();
         Call<String> call = inmoServices.login(usuario, clave);
-
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

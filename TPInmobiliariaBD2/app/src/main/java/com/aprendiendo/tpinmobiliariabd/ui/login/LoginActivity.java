@@ -41,9 +41,9 @@ public class LoginActivity extends AppCompatActivity {
                 String usuario = binding.etUsuario.getText().toString();
                 String clave = binding.etClave.getText().toString();
                 mv.logueo(usuario, clave);
-
             }
         });
+
 
 
     }

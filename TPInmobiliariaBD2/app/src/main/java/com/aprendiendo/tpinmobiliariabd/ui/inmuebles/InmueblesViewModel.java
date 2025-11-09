@@ -22,9 +22,7 @@ public class InmueblesViewModel extends AndroidViewModel {
     public InmueblesViewModel(@NonNull Application application) {
         super(application);
     }
-    public LiveData<List<Inmueble>> getmListaInmuebles(){
-        return mlistaInmuebles;
-    }
+    public LiveData<List<Inmueble>> getmListaInmuebles(){ return mlistaInmuebles; }
 
     public void obtenerListaInmuebles(){
         String token = ApiClient.obtenerToken(getApplication());

@@ -26,11 +26,6 @@ public class DetalleInmuebleFragment extends Fragment {
 
     private Inmueble inmueble;
 
-
-    public static DetalleInmuebleFragment newInstance() {
-        return new DetalleInmuebleFragment();
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
