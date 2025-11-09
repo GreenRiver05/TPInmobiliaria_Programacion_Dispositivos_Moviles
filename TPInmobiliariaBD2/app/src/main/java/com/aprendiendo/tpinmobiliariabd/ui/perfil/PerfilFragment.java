@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.aprendiendo.tpinmobiliariabd.R;
 import com.aprendiendo.tpinmobiliariabd.databinding.FragmentPerfilBinding;
@@ -93,6 +94,23 @@ public class PerfilFragment extends Fragment {
                         binding.etEmail.getText().toString());
             }
         });
+
+        binding.btResetearClave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mv.resetearClave(binding.etEmail.getText().toString());
+            }
+        });
+
+        binding.btActualizarClave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("email", binding.etEmail.getText().toString());
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.cambiarContraseniaFragment, bundle );
+            }
+        });
+
 
         mv.obtenerPefil();
         return root;

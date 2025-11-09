@@ -116,6 +116,36 @@ public class PerfilViewModel extends AndroidViewModel {
         }
     }
 
+
+    public void resetearClave(String email) {
+        if(email.isEmpty()){
+            Toast.makeText(getApplication(), "Debe completar el campo", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(!email.contains("@")){
+            Toast.makeText(getApplication(), "El email no es válido", Toast.LENGTH_LONG).show();
+            return;
+        }
+        ApiClient.InmoServices api = ApiClient.getInmoServices();
+        Call<String> call = api.resetPassword(email);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(getApplication(), response.body(), Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplication(), "Error al enviar el email", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable throwable) {
+                Toast.makeText(getApplication(), "Error en la API", Toast.LENGTH_LONG);
+            }
+        });
+    }
+
+
     public void reiniciarPerfil() {
         mEstado.setValue(false);
         mNombre.setValue("Editar");
