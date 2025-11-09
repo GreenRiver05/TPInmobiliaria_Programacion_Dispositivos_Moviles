@@ -87,17 +87,6 @@
                 android:text="Ingresar"
                 android:textColor="@android:color/white" />
 
-            <Button
-                android:id="@+id/btnResetPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Olvidaste tu contraseña?"
-                android:textColor="@color/purple_500"
-                android:background="@android:color/transparent"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp" />
-
 
             <TextView
                 android:id="@+id/tvError"
