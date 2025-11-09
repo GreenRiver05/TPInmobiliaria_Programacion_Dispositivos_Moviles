@@ -15,7 +15,11 @@
         android:id="@+id/nav_perfil"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.perfil.PerfilFragment"
         android:label="@string/menu_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_nav_perfil_to_cambiarContraseniaFragment"
+            app:destination="@id/cambiarContraseniaFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_inmuebles"
@@ -38,12 +42,20 @@
         android:id="@+id/nav_contratos"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.contratos.ContratosFragment"
         android:label="@string/menu_contratos"
-        tools:layout="@layout/fragment_contratos" />
+        tools:layout="@layout/fragment_contratos" >
+        <action
+            android:id="@+id/action_nav_contratos_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_inquilinos"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.inquilinos.InquilinosFragment"
         android:label="@string/menu_inquilinos"
-        tools:layout="@layout/fragment_inquilinos" />
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_nav_inquilinos_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detalleInmuebleFragment"
         android:name="com.aprendiendo.tpinmobiliariabd.ui.inmuebles.DetalleInmuebleFragment"
@@ -61,5 +73,38 @@
         <action
             android:id="@+id/action_crearInmuebleFragment_to_nav_inmuebles"
             app:destination="@id/nav_inmuebles" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleContratoFragment"
+        android:name="com.aprendiendo.tpinmobiliariabd.ui.contratos.DetalleContratoFragment"
+        android:label="Contrato"
+        tools:layout="@layout/fragment_detalle_contrato" >
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_nav_contratos"
+            app:destination="@id/nav_contratos" />
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_nav_inquilinos"
+            app:destination="@id/nav_inquilinos" />
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.aprendiendo.tpinmobiliariabd.ui.pagos.PagosFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pagos" >
+        <action
+            android:id="@+id/action_pagosFragment_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cambiarContraseniaFragment"
+        android:name="com.aprendiendo.tpinmobiliariabd.ui.perfil.CambiarContraseniaFragment"
+        android:label="Cambiar Contrasenia"
+        tools:layout="@layout/fragment_cambiar_contrasenia" >
+        <action
+            android:id="@+id/action_cambiarContraseniaFragment_to_nav_perfil"
+            app:destination="@id/nav_perfil" />
     </fragment>
 </navigation>
