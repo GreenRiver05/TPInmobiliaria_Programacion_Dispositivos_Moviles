@@ -33,7 +33,12 @@ public class InmueblesViewModel extends AndroidViewModel {
             @Override
             public void onResponse(Call<List<Inmueble>> call, Response<List<Inmueble>> response) {
                 if (response.isSuccessful()){
-                    mlistaInmuebles.postValue(response.body());
+                    List<Inmueble> lista = response.body();
+
+                    // Ordenar por idInmueble descendente
+                    lista.sort((a, b) -> Integer.compare(b.getIdInmueble(), a.getIdInmueble()));
+
+                    mlistaInmuebles.postValue(lista);
                 }else {
                     Toast.makeText(getApplication(),"no se obtuvieron Inmuebles",Toast.LENGTH_LONG).show();
                 }
