@@ -59,7 +59,7 @@ Aplicación móvil desarrollada para los propietarios registrados en la inmobili
 - Resetear contraseña por correo
 - Cambiar contraseña desde perfil
 
-🔗 [Ver en YouTube]()
+🔗 [Ver en YouTube](https://youtu.be/1asJJgRe4bg)
 
 ---
 
