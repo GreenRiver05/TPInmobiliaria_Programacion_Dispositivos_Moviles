@@ -40,7 +40,7 @@ Aplicación móvil desarrollada para los propietarios registrados en la inmobili
 - Logout
 - Inicio con mapa
 
-🔗 [Ver en YouTube](https://www.youtube.com/watch?v=LINK_DEL_VIDEO_1)
+🔗 [Ver en YouTube](https://youtu.be/1R-ADbn51fw)
 
 ---
 
