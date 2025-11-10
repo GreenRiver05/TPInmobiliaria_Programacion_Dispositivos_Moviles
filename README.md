@@ -51,7 +51,7 @@ Aplicación móvil desarrollada para los propietarios registrados en la inmobili
 - Agregar nuevo inmueble con foto 🆕
 - Listar contratos y pagos y su inquilino
 
-🔗 [Ver en YouTube](https://www.youtube.com/watch?v=LINK_DEL_VIDEO_2)
+🔗 [Ver en YouTube](https://youtu.be/owzjFIHd118)
 
 ---
 
