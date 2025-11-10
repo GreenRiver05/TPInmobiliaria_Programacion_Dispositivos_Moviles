@@ -107,7 +107,7 @@ public class PerfilFragment extends Fragment {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("email", binding.etEmail.getText().toString());
-                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.cambiarContraseniaFragment, bundle );
+                Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.cambiarContraseniaFragment, bundle);
             }
         });
 

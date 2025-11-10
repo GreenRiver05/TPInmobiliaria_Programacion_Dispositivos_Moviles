@@ -29,30 +29,43 @@ public class CambiarContraseniaViewModel extends AndroidViewModel {
     private MutableLiveData<Integer> mColorBoton = new MutableLiveData<>();
     // controlar el color del botón de continuar
 
-
-
+    private String email;
 
 
     public CambiarContraseniaViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<Boolean> getmEstado() { return mEstado; }
-    public LiveData<Integer> getmColor() { return mColor; }
-    public LiveData<Integer> getmVisibilidad() { return mVisibilidad; }
-    public LiveData<Integer> getmColorBoton() { return mColorBoton; }
+    public LiveData<Boolean> getmEstado() {
+        return mEstado;
+    }
 
+    public LiveData<Integer> getmColor() {
+        return mColor;
+    }
 
+    public LiveData<Integer> getmVisibilidad() {
+        return mVisibilidad;
+    }
 
+    public LiveData<Integer> getmColorBoton() {
+        return mColorBoton;
+    }
 
-    public void continuar(String claveActual, Bundle bundle) {
+    public void recuperarEmail(Bundle bundle) {
+        email = bundle.getString("email");
+        if (email == null || email.isEmpty()) {
+            Toast.makeText(getApplication(), "Email no disponible", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void continuar(String claveActual) {
         if (claveActual.isEmpty()) {
-            Toast.makeText(getApplication(), "Debe completar contraseña actual", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplication(), "Debe completar el campo", Toast.LENGTH_LONG).show();
             return;
         }
-        String usuario = bundle.getString("email");
         ApiClient.InmoServices inmoServices = ApiClient.getInmoServices();
-        Call<String> call = inmoServices.login(usuario, claveActual);
+        Call<String> call = inmoServices.login(email, claveActual);
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

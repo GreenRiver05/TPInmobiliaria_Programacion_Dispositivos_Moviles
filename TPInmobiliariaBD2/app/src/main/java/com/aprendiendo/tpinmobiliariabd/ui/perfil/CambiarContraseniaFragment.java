@@ -63,12 +63,13 @@ public class CambiarContraseniaFragment extends Fragment {
             }
         });
 
+        mv.recuperarEmail(getArguments());
 
         binding.btContinuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String claveActual = binding.etClaveActual.getText().toString();
-                mv.continuar(claveActual, getArguments());
+                mv.continuar(claveActual);
             }
         });
 
