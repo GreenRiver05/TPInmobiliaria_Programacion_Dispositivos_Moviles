@@ -27,7 +27,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
-
+//Esta clase sirve para conectarse a la API
 public class ApiClient {
     public final static String BASE_URL = "https://inmobiliariaulp-amb5hwfqaraweyga.canadacentral-01.azurewebsites.net/";
 
@@ -41,6 +41,7 @@ public class ApiClient {
 
     }
 
+    //Aca se definen los metodos para conectarse a la API
     public interface InmoServices {
 
         @FormUrlEncoded
@@ -64,8 +65,6 @@ public class ApiClient {
         Call<Inmueble> CargarInmueble(@Header("Authorization") String token,
                                       @Part MultipartBody.Part imagen,
                                       @Part("inmueble") RequestBody inmuebleBody);
-
-
 
         @GET("api/inmuebles/GetContratoVigente")
         Call<List<Inmueble>> getInmueblesConContrato(@Header("Authorization") String token);
@@ -91,7 +90,7 @@ public class ApiClient {
 
 
     }
-
+    //Guardo el token en SharedPreferences para poder usarlo en las siguientes peticiones
     public static void guardarToken(Context context, String token) {
         SharedPreferences sp = context.getSharedPreferences("token.xml", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();

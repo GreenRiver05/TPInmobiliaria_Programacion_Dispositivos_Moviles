@@ -1,5 +1,4 @@
 package com.aprendiendo.tpinmobiliariabd.ui.contratos;
-
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 

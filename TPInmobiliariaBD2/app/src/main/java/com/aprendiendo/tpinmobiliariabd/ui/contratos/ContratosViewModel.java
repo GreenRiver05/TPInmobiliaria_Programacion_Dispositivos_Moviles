@@ -1,18 +1,14 @@
 package com.aprendiendo.tpinmobiliariabd.ui.contratos;
-
 import android.app.Application;
 import android.util.Log;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import com.aprendiendo.tpinmobiliariabd.modelos.Inmueble;
 import com.aprendiendo.tpinmobiliariabd.request.ApiClient;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

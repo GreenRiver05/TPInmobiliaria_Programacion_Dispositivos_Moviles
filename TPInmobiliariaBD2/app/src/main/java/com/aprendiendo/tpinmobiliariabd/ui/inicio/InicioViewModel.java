@@ -1,5 +1,4 @@
 package com.aprendiendo.tpinmobiliariabd.ui.inicio;
-
 import android.app.Application;
 
 import androidx.annotation.NonNull;
@@ -20,7 +19,6 @@ public class InicioViewModel extends AndroidViewModel {
 
     public InicioViewModel(@NonNull Application application) {
         super(application);
-
     }
 
     public LiveData<MapaActual> getMapaActual() {

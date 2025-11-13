@@ -1,5 +1,4 @@
 package com.aprendiendo.tpinmobiliariabd.ui.contratos;
-
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -23,8 +22,6 @@ public class DetalleContratoFragment extends Fragment {
     private DetalleContratoViewModel mv;
     private FragmentDetalleContratoBinding binding;
     private Contrato contrato;
-
-
 
     public static DetalleContratoFragment newInstance() {
         return new DetalleContratoFragment();
